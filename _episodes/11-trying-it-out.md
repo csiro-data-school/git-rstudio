@@ -29,3 +29,4 @@ in this situation is more than we can cover in one day and so we will avoid the 
 > Remember to commit and push at appropriate points.
 >
 > Pull changes from the remote repo to see your classmates notes.
+{:.challenge}
