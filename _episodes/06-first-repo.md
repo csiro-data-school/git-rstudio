@@ -143,7 +143,7 @@ files.
 The status symbol for these two files has changed to **[A]**dded to show that these files have been
 added to the staging area for the first time.
 
-> ##Why two status columns?
+> ## Why two status columns?
 > The two columns of status symbols help you determine *where* the changes are. The status for the
 > left hand column is for the staging area, and for the right hand column for the working directory.
 {: .callout}
