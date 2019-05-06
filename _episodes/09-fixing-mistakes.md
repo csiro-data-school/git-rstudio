@@ -136,3 +136,4 @@ future.
 > - Save your change somewhere else
 > - Create a new RStudio project and clone it from your remote repository
 > - Reintroduce your change from the saved file
+{:.challenge}
