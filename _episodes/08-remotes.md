@@ -220,7 +220,7 @@ Of course we don't want information to only go one way - if the remote has chang
 from a collaborator we need to get those onto our local machine. To do this, we're doing the 
 opposite of a `push`, so it's helpfully called a `pull`.
 
-> ## Challenge 2
+> ## Challenge 3
 > 
 > Make a change to your repository using the GitHub web interface (look for the pencil icon to edit a file).
 >
