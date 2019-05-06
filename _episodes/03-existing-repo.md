@@ -40,7 +40,7 @@ wider picture before going into the details.
 ## Demo
 
 We'll start with a very simple 
-[existing repository](projec://github.com/csiro-data-school/example-repo)
+[existing repository](https://github.com/csiro-data-school/example-repo)
 that contains a brief history from a few different people
 
 - History

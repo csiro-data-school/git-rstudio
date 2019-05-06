@@ -1,6 +1,5 @@
 ---
 layout: episode
 title: Break
-break: 50
+break: 20
 ---
-
