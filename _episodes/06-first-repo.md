@@ -31,49 +31,34 @@ but not everybody may be able to relate to a program written in e.g. Python or a
 
 Let's start.
 
-Make a new directory for this lesson. We'll store the Git repositories we make inside this directory.
-
 One of the basic principles of Git is that it is **easy to create repositories**:
 
-From inside your new directory:
+To do this within RStudio, create an empty New Project within a New Directory and ensure that 
+"Create a git repository" is selected.
 
-```shell
-$ mkdir recipe
-$ cd recipe
-$ git init
-```
+That's it! We have now created a new RStudio Project with it's own Git repository.
 
-That's it! We have now created an empty Git repository.
+If we look at the file pane to show the directory’s contents, it appears that not much has happened:
 
-If we use `ls` to show the directory’s contents, it appears that nothing has changed:
+![]({{ site.baseurl }}/fig/06-initial-files.png){:class="fig-responsive" style="max-width:70%"}
 
-```
-$ ls
-```
+The two files created (`.gitignore` and `intro-git.Rproj`) are both created by RStudio to help us manage
+the project.
 
-But if we add the `-a` flag to show everything, we can see that Git has created a hidden directory
-within `recipe` called `.git`:  
+But if we select "Show Hidden Files" from the "More" menu, we can see that Git has created a hidden directory
+within the directory called `.git`:  
 
-```
-$ ls -a 
-. ..  .git 
-```
+![]({{ site.baseurl }}/fig/06-hidden-files.png){:class="fig-responsive" style="max-width:70%"}
+
 
 Git uses this special sub-directory to store all the information about the project, including all files and sub-directories located within the project’s directory. If we ever delete the .git sub-directory, we will lose the project’s history.
 
-We will use `git status` a lot to check out to see what is going on with the repository:
+To check out to see what is going on with the repository, you can view the Git status pane:
 
-```shell
-$ git status
+![]({{ site.baseurl }}/fig/05-rstudio-git-project.png){:class="fig-responsive" style="max-width:70%"}
 
-On branch master
-
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
-```
-
-We will make sense of this information during this lesson.
+The **[?]** by each file in this case shows that the two created files are currently untracked by Git.
+We will make sense of the information in the Git pane during this lesson.
 
 
 ## So what exactly is a Git repository?
@@ -91,14 +76,6 @@ We will make sense of this information during this lesson.
 
 - Git takes snapshots only if we request it.
 - We will record changes always in two steps (we will later explain why this is a recommended practice):
-
-```shell
-$ git add somefile.txt
-$ git commit
-
-$ git add file.txt anotherfile.txt
-$ git commit
-```
 
 - We first focus (`git add`, we "stage" the change), then shoot (`git commit`):
 
@@ -136,165 +113,127 @@ The second file is called `ingredients.txt` and contains:
 * 2 tsp salt
 ```
 
-As mentioned above, in Git you can always check the status of files in your repository using
-`git status`. It is always a safe command to run and in general a good idea to
-do when you are trying to figure out what to do next:
-
-```shell
-$ git status
-
-On branch master
-
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	ingredients.txt
-	instructions.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-The two files are untracked in the repository (directory). Going back to the photography analogy, you want to **`add` the files** (focus the camera)
-to the list of files tracked by Git. Git does not track
-any files automatically and you need make a conscious decision to add a file. Let's do what
-Git hints at and add the files:
-
-
-```shell
-$ git add ingredients.txt
-$ git add instructions.txt
-$ git status
-
-On branch master
-
-Initial commit
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-	new file:   ingredients.txt
-	new file:   instructions.txt
-```
-
-Now this change is *staged* and ready to be committed (the camera is focused and we're ready to take the snapshot).
-
-Let's now commit the change to the repository:
-
-```shell
-$ git commit -m "adding ingredients and instructions"
-
-[master (root-commit) aa243ea] adding ingredients and instructions
- 2 files changed, 8 insertions(+)
- create mode 100644 ingredients.txt
- create mode 100644 instructions.txt
-```
-
-Right after we query the status to get this useful command into our muscle memory:
-
-```shell
-$ git status
-```
-
-### Looking at the history
-
-Now try `git log` to see the information that git has stored about your snapshot:
-
-```shell
-$ git log
-
-commit 787611f02dd6fc862c87359b804859caa5d2fdbd
-Author: Alex Whan <alexwhan@gmail.com>
-Date:   Wed Mar 13 17:07:44 2019 +1100
-
-    adding ingredients and instructions
-```
-
-- We can browse the development and access each state that we have committed.
-- The long hashes uniquely label a state of the code.
-- They are not just integers counting 1, 2, 3, 4, ... (why?).
-- We will use them when comparing versions and when going back in time.
-- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
-- If the first characters of the hash are unique it is not necessary to type the entire hash.
-- `git log --stat` is nice to show which files have been modified.
-
----
-
 > ## Challenge 1
->
-> Add 1/2 onion to `ingredients.txt` and also the instruction
-> to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
->
-> When you are done editing the files, run `git diff`:
+> Create the two files with "File">"New File">"Text File".
 > 
-> ```shell
-> $ git diff
-> ```
+> Copy the contents above into the files and save them
 >
-> What does the output tell you?
->
-> > ## Solution to Challenge 1
-> >
-> > ```
-> > diff --git a/ingredients.txt b/ingredients.txt
-> > index 2607525..ec0abc6 100644
-> > --- a/ingredients.txt
-> > +++ b/ingredients.txt
-> > @@ -1,3 +1,4 @@
-> >  * 2 avocados
-> >  * 1 lime
-> >  * 2 tsp salt
-> > +* 1/2 onion
-> > diff --git a/instructions.txt b/instructions.txt
-> > index 6a8b2af..f7dd63a 100644
-> > --- a/instructions.txt
-> > +++ b/instructions.txt
-> > @@ -3,3 +3,4 @@
-> >  * squeeze lime
-> >  * add salt
-> >  * and mix well
-> > +* enjoy!
-> > ```
-> > 
-> > - The output shows which files are being compared - the "before" and "after" versions of the same file.
-> > - The new lines added are prefixed with a `+` sign to show that they are new.
+> What is the status of these files in the Git pane?
+> > ## Solution 1
+> > The two files are both listed as untracked
 > {: .solution}
 {: .challenge}
 
+As mentioned above, in RStudio you can always check the Git status of files in your repository using
+the Git pane. 
+
+![]({{ site.baseurl }}/fig/06-new-files.png){:class="fig-responsive" style="max-width:40%"}
+
+
+In this case, the files are both listed as untracked because we have not yet told Git to pay attention
+to them. Going back to the photography analogy, we need to **`add` the files** (focus the camera)
+to the list of files tracked by Git. Git does not track any files automatically and you need make a
+conscious decision to add a file. 
+
+To stage the new files (add them to the repository), simply select the "Staged" checkbox beside the 
+files.
+
+![]({{ site.baseurl }}/fig/06-add-files.png){:class="fig-responsive" style="max-width:60%"}
+
+The status symbol for these two files has changed to **[A]**dded to show that these files have been
+added to the staging area for the first time.
+
+> ##Why two status columns?
+> The two columns of status symbols help you determine *where* the changes are. The status for the
+> left hand column is for the staging area, and for the right hand column for the working directory.
+{: .callout}
+
+Now this change is *staged* and ready to be committed (the camera is focused and we're ready to take the snapshot).
+
+Let's now commit the change to the repository using the "Commit" button 
+![]({{ site.baseurl }}/fig/06-commit-button.png){:height="30px"}{:style="display: inline; margin:0px"}.
+This brings up a window where we can double check our proposed commit and confirm it with a message
+explaining what we have done.
+
+![]({{ site.baseurl }}/fig/06-commit-window.png){:class="fig-responsive" style="max-width:60%"}
+
 > ## Challenge 2
+> After exploring the commit window to see what it shows, confirm the commit with the commit message 
+> `adding ingredients and instructions`
 > 
-> Stage and commit each change separately. For the second commit, don't use the `-m` flag.
-> 
-> What are the steps to run?
-> 
-> What happens if you don't use `-m`?
-> 
+> What is the response you recieve?
 > > ## Solution to Challenge 2
+> > You will recieve a message explaining what Git has done. It will include your commit message and
+> > a summary of the files and lines of text that have been changed.
+> > ![]({{ site.baseurl }}/fig/06-commit-response.png){:class="fig-responsive" style="max-width:60%"}
+> {:.solution}
+{:.challenge}
+
+If you look at the Git status pane after your commit, you will see that `ingredients.txt` and `instructions.txt`
+are no longer listed. This means that there are no differences between your working files, staging area,
+and Git repository. Everything is up to date.
+
+### Looking at the history
+
+To track the progression of your repository, you can use the "History" window 
+![]({{ site.baseurl }}/fig/06-history-button.png){:height="30px"}{:style="display: inline; margin:0px"}:
+
+![]({{ site.baseurl }}/fig/06-history-window.png){:class="fig-responsive" style="max-width:60%"}
+
+From this window, we can browse the development and access each state that we have committed no 
+matter how long ago it was.
+
+> ## Challenge 3
+>
+> Add 1/2 onion to `ingredients.txt` and also the instruction to "enjoy!" to `instructions.txt`. 
+> Save the changes but **do not stage them** yet.
+> 
+> What is their new status? **Hint:** Hover over the status symbol if you do not know what it means.
+>
+> When you are done editing the files, check the differences between their current state and their
+> last committed state with the "Diff" window ![]({{ site.baseurl }}/fig/06-diff-button.png){:height="30px"}{:style="display: inline; margin:0px"}
+>
+> What does the output tell you?
+>
+> > ## Solution to Challenge 3
+> > The status of the files change to **[M]**odified. Because the status is in the right hand column
+> > it is telling us that the files in our *working directory* are different from the last commit,
+> > but that these changes have not been staged yet.
 > > 
-> > A possible example:
+> > ![]({{ site.baseurl }}/fig/06-diff-window.png){:class="fig-responsive" style="max-width:60%"}
 > > 
-> > ```shell
-> > $ git add ingredients.txt
-> > $ git commit -m "add half an onion"
-> > $ git add instructions.txt
-> > $ git commit                   
-> > ```
+> > - The output lets you review any differences between a file and it's last committed version
+> > - Added lines are shown in green while deleted lines are shown in red.
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 4
+> 
+> Stage and commit each change separately. For the first commit, use a one line commit message.
+> For the second commit, use a long message that has multiple lines.
+> 
+> What do you see in the Git History after you have committed both changes?
+> 
+> > ## Solution to Challenge 4
 > > 
-> > When you leave out the `-m` flag, Git should open an editor where you can edit
-> > your commit message. This message will be associated and stored with the
-> > changes you made. This message is your chance to explain what you've done and
-> > convince others (and your future self) that the changes you made were
-> > justified.  
+> > A possible solution:
+> > ![]({{ site.baseurl }}/fig/06-chal-4.png){:class="fig-responsive" style="max-width:70%"}
 > > 
-> > Using a text editor (instead of `-m`) can be useful because you can include much longer commit messages.
+> > The commit message in this case was:
+> > ~~~~~~
+> > Reminder to stop and smell the roses.
+> > It's important to tell people to enjoy it in the instructions because otherwise they might forget.
+> > And we are very keen for people to enjoy this recipe.
+> > ~~~~~
+> > but only the first line is shown. The full message *is* saved with the commit however, and can
+> > be accessed using the command line tools.
 > {: .solution}
 {: .challenge}
 
 
 ### Writing useful commit messages
 
-Using `git log --oneline` we understand that the first line of the commit message is very important.
+From the last example we understand that the first line of the commit message is very important.
 
 Good example:
 
@@ -330,24 +269,34 @@ Some files should not be tracked in a Git repository. This includes files that a
 {: .discussion}
 
 
-For this we use `.gitignore` files. Example:
+For this we use `.gitignore` files that tell Git to ignore certain files. For example, the contents
+of the `.gitignore` file created when we started the project:
 
 ```
-# ignore R binary files 
-*.RData
-# ignore .exe files
-*.exe
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
 ```
 
-> ## Challenge 3
+This tells Git to ignore any files that match those names in the same folder as the `.gitignore` file.
+These are all files that RStudio might create while you are working but contain data that most people
+do not want to save permanently in a repository.
+> ## Challenge 5
 > 
 > Make a new file called `my-personal-notes.txt`. Add some content to the file that describes your feelings about Git so far...
+> What happens in the Git Status pane when you save the file?
 > 
-> Since you might not want these comments seen by collaborators, make sure it is ignored by git
+> Since you might not want these comments seen by collaborators, make sure it is ignored by git by 
+> adding the file path to `.gitignore`.
+> What happens in the Git Status pane after you save the `.gitignore` change?
 > 
 > > ## Solution to Challenge 3
 > > 
-> > By adding the path `my-personal-notes.txt` to the `.gitignore` file, your personal thoughts about Git won't be added to any snapshots.
+> > The file `my-personal-notes.txt` should appear in the Git Status pane as untracked when you change 
+> > it for the first time.
+> > 
+> > When you add it to `.gitignore` it will no longer appear in the Git Status pane.
 > {: .solution}
 {: .challenge}
 
@@ -359,46 +308,16 @@ relatively.
 
 ### Keep your repo clean
 
-- Use `git status` a lot.
+- Check the Git Status pane often.
 - Use `.gitignore`.
 - If you don't want to track a file, it should be listed in .gitignore.
 - **All files should be either tracked or ignored**.
-
-## GUI tools
-
-We have seen how to make commits directly via the GitHub website, and also via command line. 
-But it is also possible to work from within a Git graphical user interface (GUI):
-
-- [Sublime Merge](https://www.sublimemerge.com/)
-- [GitHub Desktop](https://desktop.github.com)
-- [SourceTree](https://www.sourcetreeapp.com)
-- [List of third-party GUIs](https://git-scm.com/downloads/guis)
 
 ---
 
 ## Summary
 
-Now we know how to save snapshots (commits):
+Now we know how to save snapshots by staging and then committing them.
 
-```shell
-$ git add <file(s)>
-$ git commit
-```
-
-And this is what we do as we program.
-
-Every state is then saved and later we will learn how to go back to these "checkpoints"
-and how to undo things.
-
-```shell
-$ git init    # initialize new repository
-$ git add     # add files or stage file(s)
-$ git commit  # commit staged file(s)
-$ git status  # see what is going on
-$ git log     # see history
-$ git diff    # show unstaged/uncommitted modifications
-$ git show    # show the change for a specific commit
-$ git mv      # move tracked files
-$ git rm      # remove tracked files
-```
-
+And this is the most common use pattern for Git as you work. Write some text/code, stage and commit
+it your changes at a reasonable point. Then start again writing your code from the new checkpoint.
