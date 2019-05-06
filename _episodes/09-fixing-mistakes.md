@@ -45,7 +45,7 @@ we can look at resolving:
 
 The simplest situation is where you have modified a file, but not yet staged the changes. In this 
 case, it is easy to roll the file back to the last committed state by selecting it in the Git pane
-and using the "Revert" button ![]({{ site.baseurl }}/fig/09-revert-button.png){:height="30px"}{:style="display: inline; margin:0px"}
+and using the "Revert" button ![]({{ site.baseurl }}/git-rstudio/fig/09-revert-button.png){:height="30px"}{:style="display: inline; margin:0px"}
 from the "More" menu.
 
 > ## Challenge 1
@@ -69,7 +69,7 @@ changes that we want to keep.
 > - Make a reasonable change to the project, stage it.
 > - Then make a silly change but do not stage it.
 > - Inspect the situation in the Diff window. In particular, swap between staged and unstaged changes 
-> with the radio buttons ![]({{ site.baseurl }}/fig/09-staged-unstaged.png){:height="30px"}{:style="display: inline; margin:0px"}.
+> with the radio buttons ![]({{ site.baseurl }}/git-rstudio/fig/09-staged-unstaged.png){:height="30px"}{:style="display: inline; margin:0px"}.
 > - Swap to the Unstaged changes and remove them with the "Unstage chunk" button
 > - Inspect the new situation to confirm that your silly change has been removed, but the sensible one is retained.
 {: .challenge}
@@ -86,7 +86,7 @@ Again, the process for this is a little simpler using the command line, but can 
 RStudio. 
 
 In the History window, there is a link to show the contents of a file at any specific commit 
-![]({{ site.baseurl }}/fig/09-revert-commit.png){:height="30px"}{:style="display: inline; margin:0px"}. Open that link
+![]({{ site.baseurl }}/git-rstudio/fig/09-revert-commit.png){:height="30px"}{:style="display: inline; margin:0px"}. Open that link
 and you are able to overwrite the current contents of the file with the historical version. You can 
 also access just the history of changes for that file from this window if you are having trouble finding
 the exact version you want.
