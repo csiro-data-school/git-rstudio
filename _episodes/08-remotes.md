@@ -85,7 +85,7 @@ please do so [here](https://github.com/join).
 Once a repository is on a public service like GitHub, other people can **clone** (make a local copy)
 of this repository and contribute changes. To clone a repository in RStudio, create a New Project, 
 then select "Version Control" followed by "Git". The Repository URL can be found on GitHub using 
-the "Clone or download" button ![](/fig/07-clone-button.png){:height="40px"}{:style="display: inline; margin:0px"}
+the "Clone or download" button ![]({{ site.baseurl }}/fig/07-clone-button.png){:height="40px"}{:style="display: inline; margin:0px"}
 and will end in `.git`.
 
 Think of cloning as downloading the `.git` folder to your computer. After downloading the `.git` 
@@ -142,11 +142,11 @@ On this page choose a project name (screenshot).
 For the sake of this exercise **do not select**
 "Initialize this repository with a README" (what will happen if you do?).
 
-![create new repo on github](../fig/github/1.jpg)
+![create new repo on github]({{ site.baseurl }}/fig/github/1.jpg)
 
 Once you click the green "Create repository", you will see a page similar to:
 
-![github repo setup page](../fig/github/2.jpg)
+![github repo setup page]({{ site.baseurl }}/fig/github/2.jpg)
 
 This has created an empty repository on GitHub and provides some hints about how you can fill it.
 
@@ -167,7 +167,7 @@ but we will show you a way to achieve the same result using the RStudio interfac
 commands.
 
 1. Open up the guacamole project on your computer.
-2. Click the "New Branch"" button in the Git pane ![](/fig/07-branch-button.png){:height="35px"}{:style="display: inline; margin:0px"}
+2. Click the "New Branch"" button in the Git pane ![]({{ site.baseurl }}/fig/07-branch-button.png){:height="35px"}{:style="display: inline; margin:0px"}
 and select "Add Remote".
   
     (We will probably not have time to discuss branches, but this is also where you can set up a remote
@@ -202,7 +202,7 @@ After this initial setup, the GitHub repository will be remembered as the remote
 project. In Github terminology, when uploading changes from your machine to the remote you `push` the
 changes. When downloading changes from the remote to your machine, you `pull` them. 
 
-Not that the remote URL is set, we can use the Pull/Push buttons to perform these steps ![](/fig/07-push-pull.png){:height="30px"}{:style="display: inline; margin:0px"}.
+Not that the remote URL is set, we can use the Pull/Push buttons to perform these steps ![]({{ site.baseurl }}/fig/07-push-pull.png){:height="30px"}{:style="display: inline; margin:0px"}.
 
 
 > ## Challenge 2
