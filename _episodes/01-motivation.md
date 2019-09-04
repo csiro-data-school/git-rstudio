@@ -35,10 +35,6 @@ keypoints:
 There are lots of different tools that implement version control (generally referred to as **V**ersion **C**ontrol **S**ystems, **VCS**). They all have common features, including:
 
 - A system which **records snapshots** of a project
-- Implementation of **branching**:
-  - you can work on several feature branches and switch between them
-  - different people can work on the same code/project in parallel without interfering
-  - you can experiment with an idea and discard it if it turns out to be a bad idea
 - Implementation of **merging**:
   - tool to merge different versions of a file 
 
@@ -50,13 +46,6 @@ There are lots of different tools that implement version control (generally refe
 ### Roll-back functionality
 
 - Mistakes happen - without recorded snapshots you cannot easily undo mistakes and go back to a working version.
-
-
-### Branching
-
-- Often you want to experiment with an idea, or work on different approaches in one file - without branching this can be messy and confusing.
-- You can simulate branching by copying the entire code to multiple places but also this will be messy and confusing.
-- (We won't cover branching today, but in a future lesson)
 
 
 ### Reproducibility
