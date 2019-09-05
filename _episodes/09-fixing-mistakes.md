@@ -70,7 +70,7 @@ changes that we want to keep.
 > - Then make a silly change but do not stage it.
 > - Inspect the situation in the Diff window. In particular, swap between staged and unstaged changes 
 > with the radio buttons ![]({{ site.baseurl }}/fig/09-staged-unstaged.png){:height="30px"}{:style="display: inline; margin:0px"}.
-> - Swap to the Unstaged changes and remove them with the "Unstage chunk" button
+> - Swap to the Unstaged changes and remove them with the "Discard chunk" button
 > - Inspect the new situation to confirm that your silly change has been removed, but the sensible one is retained.
 {: .challenge}
 
