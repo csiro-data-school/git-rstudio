@@ -44,7 +44,7 @@ in this situation is more than we can cover in one day and so we will avoid the 
 > Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 > 'Note about fast-forwards' section of 'git push --help' for details.
 > ~~~~~
->
+> {: .output}
 > In order to correct this, you will need to first get the new changes from the remote repository on to your own
 > computer, before sending your changes to GitHub.
 >
@@ -54,3 +54,15 @@ in this situation is more than we can cover in one day and so we will avoid the 
 > - Then **push** the most up to date files, along with your new changes, to GitHub
 >
 {: .discussion}
+
+> ## Challenge: Know your tools
+> Today we have introduced you to three new tools: 
+>
+> - Git
+> - GitHub
+> - RStudio
+>
+> Write a short paragraph on each of these describing what each tool does, and how they interact with each other.
+> Commit it to our notes repository in the `tools` folder.
+{: .challenge}
+
