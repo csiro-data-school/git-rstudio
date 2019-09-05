@@ -18,7 +18,7 @@ Most of the  errors you are likely to encounter with Git will arise when trying 
 conflicting changes made by two people to the same file. Learning how to merge conflicting commits
 in this situation is more than we can cover in one day and so we will avoid the situation.
 
-> ## Challenge 1
+> ## Challenge: Work together
 > Create a new project that clones the [Course notes](https://github.com/csiro-data-school/focus-course-notes) repo
 > 
 > Under the `git` folder, you will see folders for a range of topics/commands.
@@ -30,3 +30,27 @@ in this situation is more than we can cover in one day and so we will avoid the 
 >
 > Pull changes from the remote repo to see your classmates notes.
 {:.challenge}
+
+> ## Warning
+> With lots of people pushing to a repository at once, you will encounter some issues that don't occur often in 
+> day to day usage. Git will not let you push to a remote repository if someone has already pushed their own changes
+> to it. If you try, you might see an error like this:
+>
+> ~~~~~~
+> To https://github.com/USERNAME/REPOSITORY.git
+>  ! [rejected]        master -> master (non-fast-forward)
+> error: failed to push some refs to 'https://github.com/USERNAME/REPOSITORY.git'
+> To prevent you from losing history, non-fast-forward updates were rejected
+> Merge the remote changes (e.g. 'git pull') before pushing again.  See the
+> 'Note about fast-forwards' section of 'git push --help' for details.
+> ~~~~~
+>
+> In order to correct this, you will need to first get the new changes from the remote repository on to your own
+> computer, before sending your changes to GitHub.
+>
+> The error message gives you a hint in how to do this:
+>
+> - First **pull** any new changes from GitHub onto your computer
+> - Then **push** the most up to date files, along with your new changes, to GitHub
+>
+{: .discussion}
