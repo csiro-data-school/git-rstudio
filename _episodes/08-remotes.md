@@ -117,7 +117,7 @@ We have already seen an example of a repository on GitHub, let's clone it and ex
 > > 
 > > 2. Two files, the `README.md` and `data/cows.csv` files, were added in the initial commit.
 > >
-> > 3. The commit by Stephen (SHA 0afb6d7b) was made three commits ago.
+> > 3. The commit by Stephen (SHA 0afb6d7b) was made four commits ago.
 > > 
 > > 4. It added lines to the `scripts/cows-analysis.R` files (lines 8-11 at the time) to get the 
 > > mean and standard deviation of each weight.
