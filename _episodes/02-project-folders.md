@@ -15,7 +15,7 @@ keypoints:
 
 > ## Challenge 1 - understanding your filesystem
 >
-> Download [this data file]{{ page.root }{% link data/gapminder.csv %}} and save it on your computer.
+> Download [this data file]{{ page.root }}{% link data/gapminder.csv %} and save it on your computer.
 > 
 > Files on your computer are stored in a kind of 'heirachy' or 'tree' structure called a **filesystem**. 
 > 
