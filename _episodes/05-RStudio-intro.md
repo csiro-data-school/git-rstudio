@@ -41,6 +41,13 @@ in the top left.
 
 You can move the panels around in RStudio so that their arrangement suits you.
 
+> ## Challenge: filesystems revised
+> 
+> In the last episode, you used windows to work out the location of a file on your computer.
+> Using your hand-drawn diagram, find that same file from the `Files` panel in RStudio.
+{: .challenge}
+
+
 # Projects
 
 R Studio provides in-built support for keeping all files associated with a project 
