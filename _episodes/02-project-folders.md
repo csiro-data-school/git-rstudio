@@ -13,13 +13,26 @@ keypoints:
   - Clear and logical organisation and naming aids understanding of the project
 ---
 
+> ## Challenge 1 - understanding your filesystem
+>
+> Download [this data file]{{ page.root }{% link data/gapminder.csv %}} and save it on your computer.
+> 
+> Files on your computer are stored in a kind of 'heirachy' or 'tree' structure called a **filesystem**. 
+> 
+> On a piece of paper, using windows explorer (or any other tool of your choice), 
+> make a drawing that represents the location of your file on your computer. 
+>
+> An example might be:
+> 
+{: .challenge}
+
 If the previous lesson provided a *bad* example of project organisation, what would a good one look 
 like? The specifc answer will depend on your project, but general idea is that someone else (probably
 yourself in six months) should be able to look at your project and understand what everything does.
 Some good principles to help achieve this can be found in [Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf)
 and [A Quick Guide to Organising Computational Biology Projects](https://doi.org/10.1371/journal.pcbi.1000424).
 
-> ## Challenge 1
+> ## Challenge 2
 > 
 > Look at the example from Figure 1 of A Quick Guide to Organising Computational Biology Projects.
 > The large text shows folder names and the smaller text file names.
@@ -70,7 +83,7 @@ back on the project in the future, `fig1.png` will likely be meaningless and you
 several files to find the one you are after. Instead, a name like `weight_comparison_plot.png` makes
 it very clear what the file contains, allowing you to find the relevand file faster.
 
-> ## Challenge 2
+> ## Challenge 3
 > 
 > Sketch out a proposed project directory for one of your own projects. Include some example file 
 > names that you would create in the course of the analysis.
