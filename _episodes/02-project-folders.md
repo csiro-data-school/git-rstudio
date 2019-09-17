@@ -22,8 +22,10 @@ keypoints:
 > On a piece of paper, using windows explorer (or any other tool of your choice), 
 > make a drawing that represents the location of your file on your computer. 
 >
-> An example might be:
-> 
+> > An example might be:
+> > 
+> > "Users" folder -> "stephen" folder -> "Downloads" folder -> "gapminder.csv" file
+> {: .solution}
 {: .challenge}
 
 If the previous lesson provided a *bad* example of project organisation, what would a good one look 
