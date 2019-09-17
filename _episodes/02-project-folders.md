@@ -22,6 +22,7 @@ keypoints:
 > On a piece of paper, using windows explorer (or any other tool of your choice), 
 > make a drawing that represents the location of your file on your computer. 
 >
+> > ## Solution
 > > An example might be:
 > > 
 > > "Users" folder -> "stephen" folder -> "Downloads" folder -> "gapminder.csv" file
