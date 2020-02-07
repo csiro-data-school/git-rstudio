@@ -13,9 +13,9 @@ objectives:
 keypoints:
   - "A repository can have one or multiple remotes."
   - "A remote serves as a full backup of your work."
-  - "`git clone` initialises a repository using content from somewhere else."
-  - "`git push` sends local changes to the remote."
-  - "`git pull` gets remote changes onto your local machine."
+  - "'Cloning' initialises a repository using content from somewhere else."
+  - "'Pushing' sends local changes to the remote."
+  - "'Pulling' gets remote changes onto your local machine."
   - "A remote allows other people to collaborate with you."
 ---
 
@@ -24,10 +24,10 @@ guacamole recipe. Don't worry, you will be able to remove it afterwards.
 
 ## From our laptops to the web
 
-We have seen that **creating Git repositories and moving them around is
-simple** and that is great.
+So far, we have covered **creating** Git repositories and 
+**adding** content to them**.
 
-So far everything was local and all snapshots are saved under `.git`.
+Everything we have creted has been local and all snapshots are saved under `.git`.
 
 If we remove `.git`, we remove all Git history of a project.
 
@@ -153,38 +153,40 @@ This has created an empty repository on GitHub and provides some hints about how
 
 ## Linking our local repository to GitHub
 
-To be able to send our local changes to GitHub, we need to tell the local repository that the one we
-just created on GitHub's servers exists. To do this, we create a 'remote'. Git repositories can have
-any number of remotes, although it is by far the most common to only use one. Each git remote is 
-given a name so that it can be referred to easily. The default remote name is `origin`.
+To be able to send our local changes to GitHub, we need to tell the local repository that the
+repository we just created on GitHub's servers exists. To do this, we create a 'remote'. Git 
+repositories can have any number of remotes, although it is by far the most common to only use one.
+Each git remote isgiven a name so that it can be referred to easily. The default remote name is 
+`origin`.
 
-You'll see that GitHub has given us the instructions for how to do this under the option
+### Starting fresh
+
+If we have not yet started creating files on our local machine, we can follow exactly the same 
+approach as Cloning a repository above to connect to our remote.
+
+* Copy the remote URL from the "Clone or download" button ![]({{ site.baseurl }}/fig/07-clone-button.png){:height="40px"}{:style="display: inline; margin:0px"}
+* Create a new RStudio Project
+* Initialise it from Version Control using your copied URL
+
+> Remembering this step at the start of a project will make things a lot easier.
+{.callout}
+
+### Existing project
+
+We already have a local git repository however, so a different approach is needed. This will be the 
+only time we need to use git through the command line. Luckily, GitHub has given us the commands we 
+need to use under the
 
 > **... or push an existing repository from the command line**
 
-You *could* copy those commands and paste them into a shell window ("More">"Shell" from the Git pane),
-but we will show you a way to achieve the same result using the RStudio interface to run the 
-commands.
+heading.
 
-1. Open up the guacamole project on your computer.
-2. Click the "New Branch"" button in the Git pane ![]({{ site.baseurl }}/fig/07-branch-button.png){:height="35px"}{:style="display: inline; margin:0px"}
-and select "Add Remote".
-  
-    (We will probably not have time to discuss branches, but this is also where you can set up a remote
-    repository)
+Copy those two lines and paste them into the Terminal window in RStudio (lower left corner). Make 
+sure that you are pasting them into the Terminal window, and not the Console window.
+![]({{ site.baseurl }}/fig/08-terminal-window.png).
 
-3. For the "Remote name", enter `origin`, and for the "Remote URL" enter the URL shown on GitHub
-when you set up the repository (will look something like `https://github.com/<USER>/<REPO_NAME>.git`).
-Click "Add" to set the GitHub repository as your remote
-
-4. The default branch name for your repository is `master`. Put that as the branch name in the next
-dialog box, ensure that "Sync branch with remote" is checked and click "Create". 
-
-    > It will complain about the local branch already existing. Select "Overwrite" from the options
-    > it provides. 
-    {: .callout}
-
-You should now see some logging information that ends with the line:
+Run the commands by pressing <kbd>Enter</kbd> and you should eventually see some logging information
+printed to the screen that ends with
 
 ```
 Branch master set up to track remote branch master from origin.
@@ -193,7 +195,9 @@ Branch master set up to track remote branch master from origin.
 **Reload your GitHub project website and - taa-daa - your commits should now be
 online!**
 
-What just happened? **Think of publishing a repository as uploading the `.git` part online**.
+## What just happened? 
+
+Think of publishing a repository as uploading the `.git` part online.
 
 In the first instance, we provided a URL as the address where we want to upload the repository. Then
 we uploaded the data and could access our Git history through GitHub.
