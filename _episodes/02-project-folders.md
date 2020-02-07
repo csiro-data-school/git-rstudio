@@ -15,15 +15,18 @@ keypoints:
 
 > ## Challenge 1 - understanding your filesystem
 >
-> Download [this data file]{{ page.root }}{% link data/gapminder.csv %} and save it on your computer.
+> Download [this data file]({{ page.root }}{% link data/gapminder.csv %}) and save it on your computer.
 > 
 > Files on your computer are stored in a kind of 'heirachy' or 'tree' structure called a **filesystem**. 
 > 
 > On a piece of paper, using windows explorer (or any other tool of your choice), 
 > make a drawing that represents the location of your file on your computer. 
 >
-> An example might be:
-> 
+> > ## Solution
+> > An example might be:
+> > 
+> > "Users" folder -> "stephen" folder -> "Downloads" folder -> "gapminder.csv" file
+> {: .solution}
 {: .challenge}
 
 If the previous lesson provided a *bad* example of project organisation, what would a good one look 
