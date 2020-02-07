@@ -36,7 +36,7 @@ and [A Quick Guide to Organising Computational Biology Projects](https://doi.org
 > 
 > Look at the example from Figure 1 of A Quick Guide to Organising Computational Biology Projects.
 > The large text shows folder names and the smaller text file names.
-> ![](https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=info:doi/10.1371/journal.pcbi.1000424.g001){:width="50%"}
+> ![](https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=info:doi/10.1371/journal.pcbi.1000424.g001){:width="80%"}
 > Can you explain the purpose of each folder and file?
 >
 {: .challenge}
