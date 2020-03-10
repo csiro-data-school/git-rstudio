@@ -73,7 +73,7 @@ to script your data processing will help here) and store the cleaned data separa
 Anything that could be considered output of our analysis goes in the results folder. Examples of 
 files that might go here include figures, modelling output, summarised data tables, etc.
 
-### Put source for the project's scripts and programs in the `src` directory, and programs brought in from elsewhere or compiled locally in the `bin` directory.
+### Put source for the project's scripts and programs in the `scripts` directory, and programs brought in from elsewhere or compiled locally in the `bin` directory.
 
 This distinction is most relevant when you are both writing your own code, as well as using external
 programs in an analysis. For most simple projects however, you can make do with a single `scripts`
@@ -84,7 +84,7 @@ folder that stores your analysis code.
 It's no use having a sensible directory structure if your files are named cryptically. When you look
 back on the project in the future, `fig1.png` will likely be meaningless and you will have to open 
 several files to find the one you are after. Instead, a name like `weight_comparison_plot.png` makes
-it very clear what the file contains, allowing you to find the relevand file faster.
+it very clear what the file contains, allowing you to find the relevant file faster.
 
 > ## Challenge 3
 > 
