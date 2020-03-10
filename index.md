@@ -13,7 +13,7 @@ This is the material for the CSIRO Data School introduction to Git.
 > ## Prerequisites
 >
 > The only prerequisites are an installation of Git and RStudio.
-> You will also need a GitHub account, but this can be created during the lessong
+> You will also need a GitHub account, but this can be created during the lesson
 {: .prereq}
 
 {% include links.md %}
